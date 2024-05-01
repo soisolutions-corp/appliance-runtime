@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "dockerfile": {
+    "enabled": false
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^Dockerfile$"],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sARG\\s+.+_VERSION=(?<currentValue>.*?)\\s"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "description": "Drops the v release prefix on certain dependencies",
+      "matchDepNames": ["kairos-io/provider-kairos"],
+      "extractVersion": "^v(?<version>.*)$"
+    }
+  ]
+}
