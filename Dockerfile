@@ -127,6 +127,9 @@ RUN systemctl enable systemd-networkd
 RUN ORIG=/usr/sbin/grub-install; DEST=/usr/sbin/grub2-install; [ -e $ORIG ] && [ ! -e $DEST ] && ln -s $ORIG $DEST || true
 RUN ORIG=/usr/bin/grub-editenv; DEST=/usr/sbin/grub2-editenv; [ -e $ORIG ] && [ ! -e $DEST ] && ln -s $ORIG $DEST || true
 
+# symlink initrd
+RUN kernel=$(ls /boot/initrd.* 2>/dev/null | head -n1) &&  if [ -e "$kernel" ]; then ln -sf "$kernel" /boot/initrd; fi || true
+
 # symlink kernel to /boot/vmlinuz
 RUN kernel=$(ls /boot/vmlinuz-* 2>/dev/null | head -n1) && if [ -e "$kernel" ]; then ln -sf "$kernel" /boot/vmlinuz; fi || true
 RUN kernel=$(ls /boot/Image* 2>/dev/null | head -n1) && if [ -e "$kernel" ]; then ln -sf "$kernel" /boot/vmlinuz; fi || true
