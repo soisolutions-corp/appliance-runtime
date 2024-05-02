@@ -3,12 +3,13 @@ ARG BASE_IMAGE=debian:bookworm-slim
 ARG FRAMEWORK_VERSION=v2.8.1
 # renovate: datasource=github-releases depName=kairos-io/provider-kairos
 ARG KAIROS_PROVIDER_VERSION=2.6.5
-ARG K3S_VERSION=1.29.4
+# renovate: datasource=docker depName=ghcr.io/soisolutions-corp/k3s
+ARG K3S_VERSION=v1.29.3-k3s1
 ARG RELEASE
 
 FROM --platform=$TARGETPLATFORM quay.io/kairos/framework:${FRAMEWORK_VERSION} as framework
 FROM --platform=$TARGETPLATFORM quay.io/kairos/packages:provider-kairos-system-${KAIROS_PROVIDER_VERSION} as provider-kairos
-FROM --platform=$TARGETPLATFORM quay.io/kairos/packages:k3s-systemd-k8s-${K3S_VERSION} as k3s
+FROM --platform=$TARGETPLATFORM ghcr.io/soisolutions-corp/k3s:${K3S_VERSION} as k3s
 FROM --platform=$TARGETPLATFORM ${BASE_IMAGE} as builder
 
 ARG BASE_IMAGE
