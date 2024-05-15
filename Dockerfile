@@ -55,6 +55,10 @@ COPY --from=provider-kairos / /
 COPY --from=k3s / /
 
 ENV DEBIAN_FRONTEND=noninteractive
+RUN if [ "${TARGETARCH}" = "amd64" ]; then \
+    apt-get update && apt-get install -y --no-install-recommends grub-pc-bin \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*; \
+    fi
 RUN apt-get update && apt-get install -y --no-install-recommends \
     binutils \
     ca-certificates \
