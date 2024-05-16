@@ -71,4 +71,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: ${{ github.event_name != 'pull_request' }}
         with:
-          files: output/build/*
+          files: output/**
