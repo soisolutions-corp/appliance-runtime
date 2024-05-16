@@ -147,6 +147,7 @@ RUN kairos-agent versioneer container-artifact-name | tee /IMAGE
 
 # General image cleanup
 RUN rm -rf /etc/machine-id
+RUN rm -rf /etc/ssh/ssh_host_*
 RUN rm -rf /boot/initramfs-* || true
 RUN rm /etc/machine-id || true
 RUN rm /var/lib/dbus/machine-id || true
