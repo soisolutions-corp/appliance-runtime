@@ -21,5 +21,15 @@
       "matchDepNames": ["kairos-io/provider-kairos"],
       "extractVersion": "^v(?<version>.*)$"
     }
+  ],
+  "hostRules": [
+    {
+      "hostType": "docker",
+      "matchHost": "ghcr.io",
+      "username": "bdalpe",
+      "encrypted": {
+        "password": "wcFMA/xDdHCJBTolAQ//Wru8pFmdpxDohbsRSD5wYpyYqV0bUuQMLkyOWO9xFNs8TKEgJvK93HdTMzElTvRdi+LsdTbgytaFFS6CKK1yf7Nx7KnENol6pAkY/j7TQY7M2NWfWZLdh7iZZagCPHnE4PMUvCtINHC97rd8SqGepyMRE5vTypvt0rg+w/aq/RNd+myC83yMFzRJsQX2FREOfOvTRVz8N03iaatfwdJnX2zLXlTS20+V30UYdYayktbhXT449xJ25TkPEvHQu+Tw/MQO2ICwi6vYFHEabIqu7yhSWO2dHlQrhwX/P/AchYaah3kGzy+FnehrQ7t5TzaJVZ4roKKEmYTb+vUr3d7tWQg6p7lGCBWbRCzHdgM9ZUsirgMn6Nq3xuoX0BA0SiTDUtR1QMQsvSkdOzxc+JSkS3kg8TO9ppPVXfNBqOV7GmjHHimqOat1rpVaks2HRTcE9tn26DNBFn4kheGb+r9xn9KOtseNCv1QPFCkKXIvU8uOis8q/GmkfIgOed4mkVjsa173DbYB71p8gXY5c23mSFVNSz13xQqyTa9qTN6r1vdUBPm1R74La8CvrkqliwClqIWK+zFZUfq6Mr+/1ZQgmOdfRtitQjQntualUZMmDIqMdPvH8CXcwkD2EzE1++0yCU2jd+1huQfwDdxOFCW67U5fXtXCeAoGPwFnslXw8yjSgAHA8uj3kSzSWS0jDqrX7qPq02cqp2xFDkMOkBFXtWnAeJBcExDl8hl4ityR6iB9kaEfuwZ+Je7UwoAESsJ8ylz7u0moAQ3u7/OswakyYAy4Qv7kyijn6zwSdg7l4+DqbU7JqFuiGI7P7iZlOR0U5zQVrdhuU2eotpw1Gplbvc3E"
+      }
+    }
   ]
 }
