@@ -118,6 +118,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rsync \
     shim-signed \
     squashfs-tools \
+    sudo \
     systemd \
     systemd-resolved \
     systemd-sysv \
