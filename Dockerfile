@@ -4,7 +4,7 @@ ARG FRAMEWORK_VERSION=v2.8.4
 # renovate: datasource=github-releases depName=kairos-io/provider-kairos
 ARG KAIROS_PROVIDER_VERSION=2.6.5
 # renovate: datasource=docker depName=ghcr.io/soisolutions-corp/k3s
-ARG K3S_VERSION=v1.30.0-k3s1
+ARG K3S_VERSION=v1.30.0-k3s1-update1
 ARG RELEASE
 
 FROM --platform=$TARGETPLATFORM quay.io/kairos/framework:${FRAMEWORK_VERSION} as framework
