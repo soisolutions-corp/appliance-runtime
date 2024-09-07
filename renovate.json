@@ -20,6 +20,11 @@
       "description": "Drops the v release prefix on certain dependencies",
       "matchDepNames": ["kairos-io/provider-kairos"],
       "extractVersion": "^v(?<version>.*)$"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["ghcr.io/soisolutions-corp/k3s"],
+      "versioning": "regex:^v(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)(?<prerelease>-rc\\d+)?-k3s(?<revision>\\d+)$"
     }
   ],
   "hostRules": [
