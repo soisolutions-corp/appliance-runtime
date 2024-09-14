@@ -1,6 +1,6 @@
 ARG BASE_IMAGE=debian:bookworm-slim@sha256:a629e796d77a7b2ff82186ed15d01a493801c020eed5ce6adaa2704356f15a1c
 # renovate: datasource=github-releases depName=kairos-io/kairos-framework
-ARG FRAMEWORK_VERSION=v2.11.3
+ARG FRAMEWORK_VERSION=v2.11.7
 # renovate: datasource=github-releases depName=kairos-io/provider-kairos
 ARG KAIROS_PROVIDER_VERSION=2.7.3
 # renovate: datasource=docker depName=ghcr.io/soisolutions-corp/k3s
