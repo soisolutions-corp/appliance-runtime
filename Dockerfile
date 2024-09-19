@@ -146,6 +146,12 @@ RUN kernel=$(ls /boot/Image* 2>/dev/null | head -n1) && if [ -e "$kernel" ]; the
 RUN kairos-agent versioneer os-release-variables | tee -a /etc/os-release
 RUN kairos-agent versioneer container-artifact-name | tee /IMAGE
 
+# Set empty machine-id
+# This prevents systemd from thinking that the machine is on first boot
+# and recreating /etc/ dependencies in services and such
+# do this before initramfs so its in the initramfs
+RUN echo "" > /etc/machine-id || true
+
 # General image cleanup
 RUN rm -rf /etc/machine-id
 RUN rm -rf /etc/ssh/ssh_host_*
