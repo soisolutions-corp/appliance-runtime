@@ -18,7 +18,7 @@ ARG KCRYPT_CHALLENGER_VERSION=0.1.0
 # renovate: datasource=github-releases depName=kairos-io/immucore
 ARG IMMUCORE_VERSION=0.4.2
 # renovate: datasource=github-releases depName=kairos-io/kairos-agent
-ARG KAIROS_AGENT_VERSION=2.13.0
+ARG KAIROS_AGENT_VERSION=2.13.4
 # renovate: datasource=github-releases depName=kairos-io/provider-kairos
 ARG KAIROS_PROVIDER_VERSION=2.7.4
 # renovate: datasource=docker depName=ghcr.io/soisolutions-corp/k3s
