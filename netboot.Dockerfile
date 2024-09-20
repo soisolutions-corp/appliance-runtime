@@ -3,8 +3,8 @@ ARG OSBUILDER_VERSION=0.300.3
 ARG APPLIANCE_RUNTIME_VERSION
 ARG ISO_NAME=soisolutions-${TARGETARCH}-${APPLIANCE_RUNTIME_VERSION}
 
-FROM --platform=$TARGETPLATFORM ghcr.io/soisolutions-corp/appliance-runtime:$APPLIANCE_RUNTIME_VERSION AS image
-FROM --platform=$BUILDPLATFORM quay.io/kairos/osbuilder-tools:$OSBUILDER_VERSION AS builder
+FROM ghcr.io/soisolutions-corp/appliance-runtime:$APPLIANCE_RUNTIME_VERSION AS image
+FROM --platform=$BUILDPLATFORM quay.io/kairos/osbuilder-tools:v$OSBUILDER_VERSION AS builder
 ARG ISO_NAME
 WORKDIR /build
 COPY . ./
