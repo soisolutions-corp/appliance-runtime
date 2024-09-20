@@ -14,7 +14,7 @@ ARG ALPINE_INITRD_VERSION=alpine-initrd-3.8.2
 # renovate: datasource=docker depName=kairos/packages
 ARG KCRYPT_VERSION=kcrypt-system-0.12.2
 # renovate: datasource=docker depName=kairos/packages
-ARG KCRYPT_CHALLENGER_VERSION=kcrypt-challenger-system-0.1.0
+ARG KCRYPT_CHALLENGER_VERSION=kcrypt-challenger-system-0.9.1
 # renovate: datasource=github-releases depName=kairos-io/immucore
 ARG IMMUCORE_VERSION=0.4.2
 # renovate: datasource=github-releases depName=kairos-io/kairos-agent
