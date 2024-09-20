@@ -18,7 +18,8 @@
   "packageRules": [
     {
       "description": "Drops the v release prefix on certain dependencies",
-      "matchDepNames": ["kairos-io/provider-kairos"],
+      "matchDatasources": ["github-releases"],
+      "matchDepNames": ["kairos-io/*"],
       "extractVersion": "^v(?<version>.*)$"
     },
     {
