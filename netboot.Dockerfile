@@ -3,8 +3,8 @@ ARG OSBUILDER_VERSION=0.300.3
 ARG APPLIANCE_RUNTIME_VERSION
 ARG ISO_NAME=soisolutions-${TARGETARCH}-${APPLIANCE_RUNTIME_VERSION}
 
-FROM --platform=$TARGETPLATFORM ghcr.io/soisolutions-corp/appliance-runtime:$APPLIANCE_RUNTIME_VERSION as image
-FROM --platform=$BUILDPLATFORM quay.io/kairos/osbuilder-tools:$OSBUILDER_VERSION as builder
+FROM --platform=$TARGETPLATFORM ghcr.io/soisolutions-corp/appliance-runtime:$APPLIANCE_RUNTIME_VERSION AS image
+FROM --platform=$BUILDPLATFORM quay.io/kairos/osbuilder-tools:$OSBUILDER_VERSION AS builder
 ARG ISO_NAME
 WORKDIR /build
 COPY . ./
@@ -17,7 +17,7 @@ RUN isoinfo -x /rootfs.squashfs -R -i /build/${ISO_NAME}.iso > ${ISO_NAME}.squas
 RUN isoinfo -x /boot/kernel -R -i /build/${ISO_NAME}.iso > ${ISO_NAME}-kernel
 RUN isoinfo -x /boot/initrd -R -i /build/${ISO_NAME}.iso > ${ISO_NAME}-initrd
 
-FROM scratch as final
+FROM scratch AS final
 ARG ISO_NAME
 COPY --from=builder /build/$ISO_NAME.iso /build/$ISO_NAME.iso
 COPY --from=builder /build/$ISO_NAME.iso.sha256 /build/$ISO_NAME.iso.sha256
