@@ -1,20 +1,20 @@
 ARG BASE_IMAGE=debian:bookworm-slim@sha256:a629e796d77a7b2ff82186ed15d01a493801c020eed5ce6adaa2704356f15a1c
-# renovate: datasource=docker depName=quay.io/kairos/packages:kairos-network-dracut
-ARG DRACUT_NETWORK_VERSION=1.1.0
-# renovate: datasource=docker depName=quay.io/kairos/packages:kairos-sysext-dracut
-ARG DRACUT_SYSEXT_VERSION=1.0.0
-# renovate: datasource=docker depName=quay.io/kairos/packages:suc-upgrade-system
-ARG SUC_UPGRADE_VERSION=0.2.1
-# renovate: datasource=docker depName=quay.io/kairos/packages:grub-config-static
-ARG GRUB_CONFIG_VERSION=0.11
-# renovate: datasource=docker depName=quay.io/kairos/packages:overlay-files-static
-ARG OVERLAY_FILES_VERSION=1.1.51
-# renovate: datasource=docker depName=quay.io/kairos/packages:alpine-initrd
-ARG ALPINE_INITRD_VERSION=3.8.2
-# renovate: datasource=docker depName=quay.io/kairos/packages:kcrypt-system
-ARG KCRYPT_VERSION=0.12.2
-# renovate: datasource=docker depName=quay.io/kairos/packages:kcrypt-challenger-system
-ARG KCRYPT_CHALLENGER_VERSION=0.1.0
+# renovate: datasource=docker depName=kairos/packages
+ARG DRACUT_NETWORK_VERSION=kairos-network-dracut-1.1.0
+# renovate: datasource=docker depName=kairos/packages
+ARG DRACUT_SYSEXT_VERSION=kairos-sysext-dracut-1.0.0
+# renovate: datasource=docker depName=kairos/packages
+ARG SUC_UPGRADE_VERSION=suc-upgrade-system-0.2.1
+# renovate: datasource=docker depName=kairos/packages
+ARG GRUB_CONFIG_VERSION=grub-config-static-0.11
+# renovate: datasource=docker depName=kairos/packages
+ARG OVERLAY_FILES_VERSION=kairos-overlay-files-static-1.1.51
+# renovate: datasource=docker depName=kairos/packages
+ARG ALPINE_INITRD_VERSION=alpine-initrd-3.8.2
+# renovate: datasource=docker depName=kairos/packages
+ARG KCRYPT_VERSION=kcrypt-system-0.12.2
+# renovate: datasource=docker depName=kairos/packages
+ARG KCRYPT_CHALLENGER_VERSION=kcrypt-challenger-system-0.1.0
 # renovate: datasource=github-releases depName=kairos-io/immucore
 ARG IMMUCORE_VERSION=0.4.2
 # renovate: datasource=github-releases depName=kairos-io/kairos-agent
@@ -25,14 +25,14 @@ ARG KAIROS_PROVIDER_VERSION=2.7.4
 ARG K3S_VERSION=v1.31.1-k3s1
 ARG RELEASE
 
-FROM quay.io/kairos/packages:kairos-network-dracut-${DRACUT_NETWORK_VERSION} AS dracut-kairos-network
-FROM quay.io/kairos/packages:kairos-sysext-dracut-${DRACUT_SYSEXT_VERSION} AS dracut-kairos-sysext
-FROM quay.io/kairos/packages:suc-upgrade-system-${SUC_UPGRADE_VERSION} AS suc-upgrade
-FROM quay.io/kairos/packages:grub-config-static-${GRUB_CONFIG_VERSION} AS grub-config
-FROM quay.io/kairos/packages:kairos-overlay-files-static-${OVERLAY_FILES_VERSION} AS overlay-files
-FROM quay.io/kairos/packages:alpine-initrd-${ALPINE_INITRD_VERSION} AS alpine-initrd
-FROM quay.io/kairos/packages:kcrypt-system-${KCRYPT_VERSION} AS kcrypt
-FROM quay.io/kairos/packages:kcrypt-challenger-system-${KCRYPT_CHALLENGER_VERSION} AS kcrypt-challenger
+FROM quay.io/kairos/packages:${DRACUT_NETWORK_VERSION} AS dracut-kairos-network
+FROM quay.io/kairos/packages:${DRACUT_SYSEXT_VERSION} AS dracut-kairos-sysext
+FROM quay.io/kairos/packages:${SUC_UPGRADE_VERSION} AS suc-upgrade
+FROM quay.io/kairos/packages:${GRUB_CONFIG_VERSION} AS grub-config
+FROM quay.io/kairos/packages:${OVERLAY_FILES_VERSION} AS overlay-files
+FROM quay.io/kairos/packages:${ALPINE_INITRD_VERSION} AS alpine-initrd
+FROM quay.io/kairos/packages:${KCRYPT_VERSION} AS kcrypt
+FROM quay.io/kairos/packages:${KCRYPT_CHALLENGER_VERSION} AS kcrypt-challenger
 FROM quay.io/kairos/packages:immucore-system-${IMMUCORE_VERSION} AS immucore
 FROM quay.io/kairos/packages:kairos-agent-system-${KAIROS_AGENT_VERSION} AS kairos-agent
 FROM quay.io/kairos/packages:provider-kairos-system-${KAIROS_PROVIDER_VERSION} AS provider-kairos
