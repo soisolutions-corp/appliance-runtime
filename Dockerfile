@@ -22,7 +22,7 @@ ARG KAIROS_AGENT_VERSION=2.14.1
 # renovate: datasource=github-releases depName=kairos-io/provider-kairos
 ARG KAIROS_PROVIDER_VERSION=2.7.4
 # renovate: datasource=docker depName=ghcr.io/soisolutions-corp/k3s
-ARG K3S_VERSION=v1.31.0-k3s1
+ARG K3S_VERSION=v1.31.1-k3s1
 ARG RELEASE
 
 FROM quay.io/kairos/packages:kairos-network-dracut-${DRACUT_NETWORK_VERSION} AS dracut-kairos-network
