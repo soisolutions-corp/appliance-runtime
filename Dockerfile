@@ -4,7 +4,7 @@ ARG DRACUT_NETWORK_VERSION=kairos-network-dracut-1.1.0
 # renovate: datasource=docker depName=kairos/packages
 ARG DRACUT_SYSEXT_VERSION=kairos-sysext-dracut-1.0.0
 # renovate: datasource=docker depName=kairos/packages
-ARG SUC_UPGRADE_VERSION=suc-upgrade-system-0.2.1
+ARG SUC_UPGRADE_VERSION=suc-upgrade-system-0.2.2
 # renovate: datasource=docker depName=kairos/packages
 ARG GRUB_CONFIG_VERSION=grub-config-static-0.11
 # renovate: datasource=docker depName=kairos/packages
