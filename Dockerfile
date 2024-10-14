@@ -179,7 +179,7 @@ RUN kernel=$(ls /boot/vmlinuz-* 2>/dev/null | head -n1) && if [ -e "$kernel" ]; 
 RUN kernel=$(ls /boot/Image* 2>/dev/null | head -n1) && if [ -e "$kernel" ]; then ln -sf "$kernel" /boot/vmlinuz; fi || true
 
 # Set release information
-RUN kairos-agent versioneer os-release-variables | tee -a /etc/os-release
+RUN kairos-agent versioneer os-release-variables > /etc/kairos-release
 RUN kairos-agent versioneer container-artifact-name | tee /IMAGE
 
 # Set empty machine-id
