@@ -1,5 +1,5 @@
 # renovate: datasource=github-releases depName=kairos-io/osbuilder
-ARG OSBUILDER_VERSION=0.400.2
+ARG OSBUILDER_VERSION=0.400.3
 ARG APPLIANCE_RUNTIME_VERSION
 ARG ISO_NAME=soisolutions-${TARGETARCH}-${APPLIANCE_RUNTIME_VERSION}
 
