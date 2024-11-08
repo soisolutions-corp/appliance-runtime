@@ -20,7 +20,7 @@ ARG IMMUCORE_VERSION=0.6.0
 # renovate: datasource=github-releases depName=kairos-io/kairos-agent
 ARG KAIROS_AGENT_VERSION=2.15.3
 # renovate: datasource=github-releases depName=kairos-io/provider-kairos
-ARG KAIROS_PROVIDER_VERSION=2.7.4
+ARG KAIROS_PROVIDER_VERSION=2.7.5
 # renovate: datasource=docker depName=ghcr.io/soisolutions-corp/k3s
 ARG K3S_VERSION=v1.31.2-k3s1
 ARG RELEASE
