@@ -8,7 +8,7 @@ ARG SUC_UPGRADE_VERSION=suc-upgrade-system-0.3.1
 # renovate: datasource=docker depName=kairos/packages
 ARG GRUB_CONFIG_VERSION=grub-config-static-0.11
 # renovate: datasource=docker depName=kairos/packages
-ARG OVERLAY_FILES_VERSION=kairos-overlay-files-static-1.5.1
+ARG OVERLAY_FILES_VERSION=kairos-overlay-files-static-1.6.2
 # renovate: datasource=docker depName=kairos/packages
 ARG ALPINE_INITRD_VERSION=alpine-initrd-3.8.2
 # renovate: datasource=docker depName=kairos/packages
